@@ -1,1 +1,4 @@
 acceptable NNP for H2+H
+if perform a normal MD/MS simulation, just comment out the:
+
+of the input.nn file
