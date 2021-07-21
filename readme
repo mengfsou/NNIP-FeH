@@ -1,7 +1,5 @@
-the atomic energy of a isolated H atoms bas set as 0.
-if perform a normal MD/MS simulation, just comment out the:
+the atomic energy of an isolated H atom was set as 0.
+if perform a normal MD/MS simulation, just comment out the line of below in the input.nn file:
 atom_energy                     H  0.040522765326467535  #-0.0408842106         # Free atom reference energy (S)
 --->
 #atom_energy                     H  0.040522765326467535  #-0.0408842106         # Free atom reference energy (S)
-
-of the input.nn file
