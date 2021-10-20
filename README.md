@@ -11,7 +11,7 @@ There are 3 folders:
  
  a. setup n2p2 package, please refer:  https://compphysvienna.github.io/n2p2/index.html
  
- b. extract the file of database.tar.gz0, database.tar.gz1,database.tar.gz2, by typing: 
+ b. extract and combine the files of database.tar.gz0, database.tar.gz1,database.tar.gz2, by typing: 
  
         cat database.tar.gz* | tar -zxv    , and
         
