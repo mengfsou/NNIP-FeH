@@ -4,13 +4,13 @@ There are 3 folders:
 
 1. DATABASE
 
- The file of database.tar.gz is the DFT database used for the construction of this NNIP.
+ The files of database.tar.gz0, database.tar.gz1,database.tar.gz2 are the DFT database used for the construction of this NNIP.
  Details of the database, please refer the paper of Phys. Rev. Mater.:Year,  Vol,  Pages, .. (doi:          )
 
  The NNIP can be reproduced by:
  a. setup n2p2 package, please refer:  https://compphysvienna.github.io/n2p2/index.html
- b. extract the file of database.tar.gz by typing: 
-        tar xzvf database.tar.gz    and
+ b. extract the file of database.tar.gz0, database.tar.gz1,database.tar.gz2, by typing: 
+        cat database.tar.gz* | tar -zxv    and
         mv database.data input.data (input.data is the name required by n2p2 package)
  c. using the input.nn file in the POTENTIAL folder and the above input.data file, performing training operation. 
     Details of training, please refer:  https://compphysvienna.github.io/n2p2/topics/training.html
