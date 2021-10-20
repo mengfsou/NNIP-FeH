@@ -1,0 +1,65 @@
+# An example for the usage of NNIP-FeH
+
+# ---------- Initialize Simulation --------------------- 
+clear 
+units metal 
+dimension 3 
+boundary p p p 
+atom_style atomic 
+
+variable        nH      equal   5	#number of H atoms to be deposited
+variable        npH     equal   100  	#deposit a H every npH steps
+variable        t1      equal   300	# temperature
+
+# ---------- Create Atomistic Structure --------------------- 
+lattice         bcc     2.83937							# lattice constant at 300K
+region          whole   block   0       8      0       8      0       8   
+create_box      2       whole 
+create_atoms    2       region  whole
+
+# ---------- Define Interatomic Potential --------------------- 
+# for the current case, the potential files are located at the folder of ../POTENTIAL, the setting can be:
+# pair_style      nnp     dir  ../POTENTAIL  showew no showewsum 1000 resetew yes maxew 1000000 cflength 1.8897261328 cfenergy 0.0367493254
+# unit of energy is in Hartree, the setting of "cfenergy 0.0367493254"  converts it to eV
+# unit of length is in Bohr, the setting of "cflength 1.8897261328" convers it to Angstrom.
+ 
+pair_style      nnp	dir  ~/dir/to/POTENTAIL  showew no showewsum 1000 resetew yes maxew 1000000 cflength 1.8897261328 cfenergy 0.0367493254
+pair_coeff * *  6.5
+mass            1       1.008
+mass            2       55.845
+neighbor        2.0     bin 
+neigh_modify    every   1      check   yes 
+#-------------------------------------------------
+compute csym all centro/atom bcc
+compute eng all pe/atom 
+compute eatoms all reduce sum c_eng 
+#--------------------------------------------------------------
+reset_timestep  0
+timestep        0.001 
+
+velocity        all    create   ${t1}   55134	rot     yes     dist    gaussian mom     yes
+fix             1       all     nvt     temp    ${t1}   ${t1}   0.1     
+
+thermo 100
+thermo_style    custom  step    temp    etotal  lx      ly      lz      press  
+dump    	4       all     custom  1000  	dump-Fe-*   	id      type    xs      ys      zs      c_csym  c_eng   fx      fy      fz
+dump_modify     4       sort    id
+
+run             2000
+undump          4
+unfix           1
+#-----------------introduce-H-to-bulk-----------
+reset_timestep  0
+timestep        0.0005
+thermo  100
+thermo_style    custom  step    temp    pe     lx      ly      lz      press   pxx     pyy     pzz	
+
+dump            5       all     custom  100  dump-FeH-*   id      type    xs      ys      zs      c_csym  c_eng   fx      fy      fz
+dump_modify     5       sort    id
+
+fix	2       all     nvt     temp    ${t1}   ${t1}   0.05          
+fix	3       all     deposit ${nH}   1       ${npH}  121454 	   region  whole   near    1.2     units box
+
+run     5000
+
+
