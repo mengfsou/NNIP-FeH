@@ -4,10 +4,10 @@ There are 3 folders:
 
 1. DATABASE
 
- The files of database.tar.gz0, database.tar.gz1,database.tar.gz2 (the 3 tar.gz files should be one file, we have to split it into 3 parts because of the size limitation of github)are the DFT database used for the construction of this NNIP.
- Details of the database, please refer the paper of Phys. Rev. Mater.:Year,  Vol,  Pages, .. (doi:          )
+The files of database.tar.gz0, database.tar.gz1,database.tar.gz2 (the 3 tar.gz files should be one file, we have to split it into 3 parts because of the size limitation of github) are the DFT database used for the construction of this NNIP.
+Details of the database, please refer the paper of Phys. Rev. Mater.:Year,  Vol,  Pages, .. (doi:          )
 
- The NNIP can be reproduced by:
+The NNIP can be reproduced by:
  
  a. setup n2p2 package, please refer:  https://compphysvienna.github.io/n2p2/index.html
  
@@ -22,17 +22,17 @@ There are 3 folders:
  
 2. POTENTIAL
 
- The NNIP includes 4 files, input.nn, scaling.data, weights.001.data, and weights.026.data.
- All these 4 files should be in one folder, and the setting in the LAMMPS input file is: 
+The NNIP includes 4 files, input.nn, scaling.data, weights.001.data, and weights.026.data.
+All these 4 files should be in one folder, and the setting in the LAMMPS input file is: 
 
- pair_style      nnp     dir  ~/dir/to/the/POTENTAIL/folder
+pair_style      nnp     dir  ~/dir/to/the/POTENTAIL/folder
  
- The interface of n2p2 and LAMMPS code, please refer: https://compphysvienna.github.io/n2p2/interfaces/if_lammps.html
+The interface of n2p2 and LAMMPS code, please refer: https://compphysvienna.github.io/n2p2/interfaces/if_lammps.html
  
- Deatails of the setting of pair_style, please refer: https://compphysvienna.github.io/n2p2/interfaces/pair_nnp.html
+Deatails of the setting of pair_style, please refer: https://compphysvienna.github.io/n2p2/interfaces/pair_nnp.html
 
 3. EXAMPLE
 
- An example for the application of NNIP in LAMMPS code.
+An example for the application of NNIP in LAMMPS code.
 
 ---------end-----------
