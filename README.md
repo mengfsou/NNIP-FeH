@@ -27,9 +27,11 @@ All these 4 files should be in one folder, and the setting in the LAMMPS input f
 
 pair_style      nnp     dir  ~/dir/to/the/POTENTAIL/folder
  
-The interface of n2p2 and LAMMPS code, please refer: https://compphysvienna.github.io/n2p2/interfaces/if_lammps.html
+The interface of n2p2 and LAMMPS code, please refer:
+https://compphysvienna.github.io/n2p2/interfaces/if_lammps.html
  
-Deatails of the setting of pair_style, please refer: https://compphysvienna.github.io/n2p2/interfaces/pair_nnp.html
+Deatails of the setting of pair_style, please refer: 
+https://compphysvienna.github.io/n2p2/interfaces/pair_nnp.html
 
 3. EXAMPLE
 
