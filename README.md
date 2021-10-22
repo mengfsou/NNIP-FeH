@@ -28,13 +28,32 @@ All these 4 files should be in one folder, and the setting in the LAMMPS input f
 pair_style      nnp     dir  ~/dir/to/the/POTENTAIL/folder
  
 The interface of n2p2 and LAMMPS code, please refer:
+
 https://compphysvienna.github.io/n2p2/interfaces/if_lammps.html
  
 Deatails of the setting of pair_style, please refer: 
+
 https://compphysvienna.github.io/n2p2/interfaces/pair_nnp.html
+
+* lammps-n2p2 interface has been included in the Lammps package, please refer:
+
+https://docs.lammps.org/pair_hdnnp.html
+
+----------------------
+pair_style      hdnnp   6.5  dir ${pot} showew no showewsum 1000 resetew yes maxew 10000 cflength 1.8897261328 cfenergy 0.0367493254
+
+pair_coeff * *  H Fe
+
+mass    1       1.008
+
+mass    2       55.847
+
+------------------------
 
 3. EXAMPLE
 
 An example for the application of NNIP in LAMMPS code.
+
+NOTE: pair_style part used in this example is the old version!! 
 
 ---------end-----------
