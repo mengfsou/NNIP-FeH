@@ -58,7 +58,7 @@ NOTE: pair_style part used in this example is the old version!!
 
 --------------------
 
-MOV.S1.avi and MOV.S1.avi are the movies mentioned in the supplemental materials of paper: 
+MOV.S1.avi and MOV.S2.avi are the movies mentioned in the supplemental materials of paper: 
 
 DOI: 10.1103/PhysRevMaterials.5.113606
 
