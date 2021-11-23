@@ -56,7 +56,11 @@ An example for the application of NNIP in LAMMPS code.
 
 NOTE: pair_style part used in this example is the old version!! 
 
----------end-----------
+--------------------
+
 MOV.S1.avi and MOV.S1.avi are the movies mentioned in the supplemental materials of paper: 
+
 DOI: 10.1103/PhysRevMaterials.5.113606
+
+-----------END--------------
 
